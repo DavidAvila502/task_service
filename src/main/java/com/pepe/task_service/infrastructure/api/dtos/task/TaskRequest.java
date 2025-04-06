@@ -11,9 +11,9 @@ import java.time.LocalDateTime;
 @Data
 public class TaskRequest {
     @NotBlank(message = "Title is required")
-    @Length(max = 200)
+    @Length(max = 200 ,message = "max lenght for title is 200")
     private String title;
-    @Length(max = 500)
+    @Length(max = 500,message = "max lenght for message is 500")
     private String description;
     @Future(message = "Due date must be in the future")
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss") // ISO 8601
