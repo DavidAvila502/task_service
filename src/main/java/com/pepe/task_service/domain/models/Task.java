@@ -39,10 +39,6 @@ public class Task {
 
     }
 
-    public  boolean isOverDue(){
-        return  dueDate.isBefore(LocalDateTime.now());
-    }
-
     //Getters
     public Long getId() {
         return id;

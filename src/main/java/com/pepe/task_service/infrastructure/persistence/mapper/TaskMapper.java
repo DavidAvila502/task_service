@@ -6,6 +6,8 @@ import com.pepe.task_service.infrastructure.api.dtos.task.TaskResponse;
 import com.pepe.task_service.infrastructure.persistence.jpa.entities.TaskJpaEntity;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
+
 @Component
 public class TaskMapper {
 
@@ -44,7 +46,7 @@ public class TaskMapper {
                 task.getDescription(),
                 task.getDueDate(),
                 task.getId(),
-                task.isOverDue() ? "OVERDUE" : "PENDING"
+                task.getDueDate().isBefore(LocalDateTime.now()) ? "OVERDUE" : "PENDING"
                 );
     }
 
